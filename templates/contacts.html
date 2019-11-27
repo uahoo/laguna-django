@@ -1,0 +1,84 @@
+{% load staticfiles  %}
+<html lang="RU">
+<body>
+{% include "header.html" %}
+{% block content %}
+<!-- CONTACTS START -->
+<section class="  section bg-gray">
+	<div class="shell ">
+		<h2>связь с нами</h2>
+		<hr class="divider divider-lg bg-primary hr-md-left-0">
+		<div class="container   range-xs-center">
+			<div class="row">
+				<div class="col-md-6 col-xl-6 range">
+					<h5>
+						<i class="fa fm fa-map service-icon-color" aria-hidden="true"></i>
+						Минск, ул. Смолячкова 9, ст.м.Площадь Победы, ст.м.&nbsp;пл.Якуба
+						Колоса
+					</h5>
+					<h5>
+						<i class="fa fm fa-phone service-icon-color" aria-hidden="true"></i>
+						<a href="tel:+375(29)1985232"><img src="/resources/img/velcom.png"
+							alt="" width="30px" height="15px"> &nbsp;+375 (29)
+							198-52-32</a><span class="slash"> / </span> <a
+							href="tel:+375(25)9573354"><img src="/resources/img/life.png" alt=""
+							width="30px" height="15px"> &nbsp;+375 (25) 957-33-54</a>
+					</h5>
+					<h5>
+						<i class="fa fm fa-clock-o service-icon-color" aria-hidden="true"></i>
+						Время работы: <strong>Круглосуточно</strong>
+					</h5>
+				</div>
+
+				<div class="col-md-6 col-xl-6">
+					<!-- GOOGLE MAPS -->
+					<div id="map" style="width: 100%; height: 450px; background: gray"></div>
+					<script src="{% static "js/initMap.js" %}" charset="utf-8"></script>
+					<script
+						src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA8T9JHvRHdspiPvELU9a38fWh7uvxfb2o&callback=initMap"></script>
+				</div>
+			</div>
+			<div style="height: 40px;"></div>
+		</div>
+	</div>
+</section>
+{% endblock content %}
+<!-- CONTACTS END -->
+<footer class="section footer">
+	<div class="container">
+		<div class="row">
+
+			<div class="col-md-6 col-lg-4">
+				<h5 class="footer-heading">Сауна-Люкс Лагуна</h5>
+				<p>Сауна-Люкс Лагуна приглашает Вас провести отдых: окунуться в
+					пучину горячего пара, бодрящую воду купели и теплый бассейн.</p>
+				<p>Настоящее расслабление в Сауне-Люкс Лагуна.</p>
+			</div>
+
+			<div class="col-md-6 col-lg-4 ">
+				<h5 class="footer-heading">Свяжитесь с нами</h5>
+				<p>
+					<i class="fa fm fa-clock-o" aria-hidden="true"></i>Круглосуточно
+				</p>
+				<p>
+					<a href="<c:url value="/contacts"/>"><i class="fa fm fa-map"
+															aria-hidden="true"></i>Минск, ул. Смолячкова 9</a>
+				</p>
+				<p>
+					<a href="tel:+375(29)1985232"><i class="fa fm fa-phone"></i>+375
+						(29) 198-52-32</a><span class="slash"> / </span><a
+						href="tel:+375(25)9573354">+375 (25) 957-33-54</a>
+				</p>
+			</div>
+
+
+		</div>
+	</div>
+
+	<div class=" text-center ">
+		<p>ООО "Потехе час"&copy; 2012 УНП 191677283</p>
+	</div>
+</footer>
+</body>
+
+</html>

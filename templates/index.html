@@ -1,0 +1,165 @@
+{% load staticfiles  %}
+<html lang="RU">
+<body>
+{% include "header.html" %}
+{% block content %}
+<!-- CAROUSEL START -->
+<section class="home-slider home-slider-half">
+	<div class="container-fluid">
+		<div id="myCarousel" class="carousel slide" data-ride="carousel">
+			<!-- Indicators, you may use them or delete -->
+			<!-- <ol class="carousel-indicators">
+                <li data-target="#myCarousel" data-slide-to="0"></li>
+                <li data-target="#myCarousel" data-slide-to="1"></li>
+                <li data-target="#myCarousel" data-slide-to="2"></li>
+              </ol> -->
+
+			<!-- Wrapper for slides -->
+
+			<div class="carousel-inner">
+
+				<div class="item active">
+					<div class="carousel-item"
+						style="background-image: url({% static "img/news1.JPG" %});">
+						<div class="bg-overlay"></div>
+						<div class="home-center">
+							<div class="home-desc-center">
+								<div class="col-md-12 text-center">
+									<p class="text-center home-title">Сауна-Люкс Лагуна</p>
+									<p class="text-center home-sub-title">Самая большая сауна
+										города с бассейном, бильярдом, банкетной и комнатой отдыха</p>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="item">
+					<div class="carousel-item"
+						style="background-image: url({% static "img/news2.JPG" %})">
+						<div class="bg-overlay"></div>
+						<div class="home-center">
+							<div class="home-desc-center">
+								<div class="col-md-12 text-center">
+									<p class="text-center home-title">Самая большая сауна в
+										Минске</p>
+									<p class="text-center home-sub-title">Помещение более 200
+										квадратных метров</p>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="item">
+					<div class="carousel-item"
+						style="background-image: url({% static "img/news3.JPG" %});">
+						<div class="bg-overlay"></div>
+						<div class="home-center">
+							<div class="home-desc-center">
+								<div class="col-md-12 text-center">
+									<p class="text-center home-title">Место для отдыха Вашей
+										семьи или друзей</p>
+									<p class="text-center home-sub-title">Проведите время
+										весело в Сауне-Люкс Лагуна</p>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+			</div>
+
+			<!-- Left and right controls -->
+			<a class="left carousel-control" href="#myCarousel" data-slide="prev">
+				<span class="glyphicon glyphicon-chevron-left"></span> <span
+				class="sr-only">Previous</span>
+			</a> <a class="right carousel-control" href="#myCarousel"
+				data-slide="next"> <span
+				class="glyphicon glyphicon-chevron-right"></span> <span
+				class="sr-only">Next</span>
+			</a>
+
+		</div>
+	</div>
+</section>
+<!-- CAROUSEL END -->
+
+<!-- NEWS START -->
+<section>
+	<div class="shell news">
+		<h2>свежие новости</h2>
+		<hr class="divider divider-lg bg-primary hr-md-left-0">
+
+		<div class="range  range-xs-center">
+			<c:forEach var="first_news" items="${FIRST_NEWS}">
+				<div class="cell-sm-10 cell-md-4">
+					<article class="post-news">
+
+						<figure>
+							<img class="img-responsive"
+								src="<c:url value="/getimage?photo_id=${first_news.photo.id}"/>" style="height: 270px;" alt="">
+						</figure>
+
+						<div class="offset-top-10">
+							<h5 class="text-primary text-bold">
+								<a href="<c:url value="/price"/>">${first_news.header}</a>
+							</h5>
+						</div>
+						<div class="offset-top-10">
+							<div class="post-meta">
+								<i class="fa fm fa-calendar" aria-hidden="true"></i>
+								<time class="text-gray  text-middle">${first_news.time}</time>
+							</div>
+						</div>
+						<p>${first_news.text}</p>
+					</article>
+				</div>
+			</c:forEach>
+		</div>
+
+<!-- 		<div id="hidden" style="display: none;"> -->
+<!-- 			<!-- block of code, which you want to repeat -->
+
+<!-- 			<div class="range  range-xs-center"> -->
+<%-- 				<c:forEach var="all_news" items="${ALL_NEWS}"> --%>
+<!-- 					<div class="cell-sm-10 cell-md-4"> -->
+<!-- 						<article class="post-news"> -->
+
+<!-- 							<figure> -->
+<!-- 								<img class="img-responsive" -->
+<%-- 									src="getimage.html?photo_id=${all_news.id}" alt=""> --%>
+<!-- 							</figure> -->
+<!-- 							</a> -->
+<!-- 							<div class="offset-top-10"> -->
+<!-- 								<h5 class="text-primary text-bold"> -->
+<%-- 									<a href="price.html#benefits">${all_news.header}</a> --%>
+<!-- 								</h5> -->
+<!-- 							</div> -->
+<!-- 							<div class="offset-top-10"> -->
+<!-- 								<div class="post-meta"> -->
+<!-- 									<i class="fa fm fa-calendar" aria-hidden="true"></i> -->
+<%-- 									<time class="text-gray  text-middle">${all_news.time}</time> --%>
+<!-- 								</div> -->
+<!-- 							</div> -->
+<%-- 							<p>${all_news.text}</p> --%>
+<!-- 						</article> -->
+<!-- 					</div> -->
+<%-- 				</c:forEach> --%>
+<!-- 			</div> -->
+
+<!-- 		</div> -->
+		<!-- button onclick shows the rest of the news and hides -->
+			<div class="offset-top-10">
+				<a href="<c:url value="/index/show-all-news"/>" id="more" class="btn btn-primary btn-sm" style="${ALL_NEWS}"  >все новости</a>
+
+
+			</div>
+	</div>
+
+</section>
+<!-- NEWS END -->
+{% endblock content %}
+{% include "footer.html" %}
+</body>
+</html>

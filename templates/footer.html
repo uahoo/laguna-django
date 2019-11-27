@@ -1,0 +1,50 @@
+<!-- FOOTER START -->
+{% load staticfiles  %}
+<!DOCTYPE html>
+<html lang="ru">
+<footer class="section footer">
+    <div class="container">
+        <div class="row">
+
+            <div class="col-md-6 col-lg-4">
+                <h5 class="footer-heading">Сауна-Люкс Лагуна</h5>
+                <p>Сауна-Люкс Лагуна приглашает Вас провести отдых: окунуться в
+                    пучину горячего пара, бодрящую воду купели и теплый бассейн.</p>
+                <p>Настоящее расслабление в Сауне-Люкс Лагуна.</p>
+            </div>
+
+            <div class="col-md-6 col-lg-4 ">
+                <h5 class="footer-heading">Свяжитесь с нами</h5>
+                <p>
+                    <i class="fa fm fa-clock-o" aria-hidden="true"></i>Круглосуточно
+                </p>
+                <p>
+                    <a href="/contact"><i class="fa fm fa-map" aria-hidden="true"></i>Минск,
+                        ул. Смолячкова 9</a>
+                </p>
+                <p>
+                    <a href="tel:+375(29)1985232"><i class="fa fm fa-phone"></i>+375
+                        (29) 198-52-32</a><span class="slash"> / </span><a
+                        href="tel:+375(25)9573354">+375 (25) 957-33-54</a>
+                </p>
+            </div>
+
+            <div class="col-lg-4 ">
+                <h5 class="footer-heading">Адрес на карте</h5>
+                <!-- GOOGLE MAPS -->
+                <div id="map" style="width: 100%; height: 150px; background: gray"></div>
+                <script src="{% static "/js/initMap.js" %}" charset="utf-8" ></script>
+                <script
+                        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA8T9JHvRHdspiPvELU9a38fWh7uvxfb2o&callback=initMap"></script>
+            </div>
+
+        </div>
+    </div>
+
+    <div class=" text-center ">
+        <p>ООО "Потехе час"&copy; 2012 УНП 191677283</p>
+    </div>
+
+</footer>
+<!-- FOOTER END -->
+

@@ -1,0 +1,31 @@
+{% load staticfiles  %}
+<html lang="RU">
+<body>
+{% include "header.html" %}
+{% block content %}
+ <section class="section">
+    <div class="shell ">
+      <h2>Личный кабинет</h2>
+      <hr class="divider divider-lg bg-primary hr-md-left-0">
+      <div class="container range-xs-center">
+        <div class="row">
+          <div class="col-md-6 col-lg-6 range">
+            <div class="jumbotron">
+              <h2>${USER.name} ${USER.surname}</h2>
+              <p>Накопленная сумма: <span>${USER.benefit}</span> руб.</p>
+            </div>
+          </div>
+
+          <div class="col-md-6 col-lg-6">
+            <h3>Подробности скидочной системы:</h3>
+            <p>При посещении сайны-люкс Лагуна, Вы получаете бонус в размере 10% от суммы сеанса. Сумма бонусов отображается в Вашем Личном кабинете на сайте. Накопленную сумму можно использовать при любом из последующих посещений.</p>
+          </div>
+        </div>
+        <div style="height: 20px;"></div>
+      </div>
+    </div>
+  </section>
+{% endblock content %}
+{% include "footer.html" %}
+</body>
+</html>

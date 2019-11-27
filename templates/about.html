@@ -1,0 +1,173 @@
+{% load staticfiles  %}
+<html lang="RU">
+<body>
+{% include "header.html" %}
+{% block content %}
+
+<!-- IMAGE SECTION START -->
+<section class="section bg-home home-half-image">
+	<!-- overlay makes shadow on image -->
+	<div class="bg-overlay"></div>
+
+	<div class="home-center">
+		<div class="home-desc-center">
+			<div class="container">
+				<div class="row ">
+					<div class="col-md-12 text-center">
+						<h2 class="text-center home-title">Сауна-Люкс Лагуна</h2>
+						<p class="text-center home-sub-title">Позвони и сделай заказ
+							прямо сейчас:</p>
+						<!-- Phone buttons -->
+						<div>
+							<a href="tel:+375(29)1985232" class="btn btn-primary btn-xs" style="margin: 8px;"><img
+								src="{% static "img/velcom.png" %}" alt="" width="30px" height="15px"
+								> &nbsp;+375 (29) 198-52-32</a>
+								<a
+								href="tel:+375(25)9573354" class="btn btn-primary btn-xs"><img
+								src="{% static "/img/life.png" %}" alt="" width="30px" height="15px">
+								&nbsp;+375 (25) 957-33-54</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+<!-- IMAGE SECTION END -->
+
+<!-- INFO ABOUT LAGUNA START -->
+<section class=" ">
+	<div class="shell ">
+		<h2>сауна-люкс лагуна</h2>
+		<hr class="divider divider-lg bg-primary hr-md-left-0">
+		<div class="container range   range-xs-center">
+			<div class="row">
+				<div class="col-md-8 col-xl-8">
+					<p>Всех любителей отменного пара ждет в гости горячая
+						финско-русская парная «Лагуна». Прямо в центре столицы, недалеко
+						от ст. м. «Площадь Победы» можно уединиться от столичной суматохи,
+						зарядиться энергией и позитивом, насладиться общением с близкими и
+						родными.</p>
+					<p>Лагуна сразит наповал любого своим мягким или обжигающим
+						жарким сухим паром. Даже если Вы не фанат сауны, мы откроем Вам
+						все секреты здоровья, которые открывает полноценная финско-русская
+						парная. У нас есть чистый бассейн с подсветкой и подвесная купель
+						с холодной водой.</p>
+					<p>После аква-процедур можно уединиться на мягком кожаном
+						диване в уютной комнате отдыха и посмотреть ТВ или послушать
+						музыку. В компании товарищей здесь вы сыграете в русский бильярд,
+						споете любимые песни под караоке. Без труда можете заказать
+						доставку прохладительных напитков и еды прямо в сауну Лагуна. У
+						нас не только отдыхают в узком семейном кругу, но и проводят
+						деловые переговоры. Роскошный банкетный зал не даст упасть лицом в
+						грязь перед почетными гостями.</p>
+					<p>Здесь любой отдых будет запоминающимся моментом Вашей жизни.
+						Сауна «Лагуна» - это отменный релакс, веселое и полезное для
+						здоровья времяпрепровождение и высококлассный сервис.</p>
+				</div>
+				<div class="col-md-4 col-xl-4">
+					<figure>
+						<img class="img-responsive" src="{% static "img/venik.png" %}" alt=""
+							style="margin: auto; padding-top: 40px;">
+					</figure>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+<!-- INFO ABOUT LAGUNA END -->
+
+
+<!-- ADVANTAGES SECTION START -->
+<section class="section bg-gray">
+	<div class="container">
+		<div class="row pb-5 text-center">
+			<div class="col-md-offset-3 col-md-6">
+				<i class="pe-7s-loop title-icon"></i>
+				<h4 class="text-uppercase title">Почему Сауна-Люкс Лагуна?</h4>
+			</div>
+		</div>
+
+		<div class="row">
+
+			<div class="col-md-4">
+				<div class="text-center">
+					<div class="services-icon">
+						<i class="pe-7s-leaf service-icon-color"></i>
+					</div>
+					<p class="services-main-title">Парная</p>
+					<p class="services-main-subtitle">финско-русская</p>
+				</div>
+			</div>
+			<!-- end col -->
+
+			<div class="col-md-4">
+				<div class="text-center">
+					<div class="services-icon">
+						<i class="pe-7s-cash service-icon-color"></i>
+					</div>
+					<p class="services-main-title">Цены</p>
+					<p class="services-main-subtitle">от 25 руб/час</p>
+				</div>
+			</div>
+			<!-- end col -->
+
+			<div class="col-md-4">
+				<div class="text-center">
+					<div class="services-icon">
+						<i class="pe-7s-clock service-icon-color"></i>
+					</div>
+					<p class="services-main-title">Время работы</p>
+					<p class="services-main-subtitle">круглосуточно</p>
+				</div>
+			</div>
+			<!-- end col -->
+		</div>
+		<!-- end row -->
+		<div class="row">
+
+			<div class="col-md-4">
+				<div class="text-center">
+					<div class="services-icon">
+						<i class="pe-7s-car service-icon-color"></i>
+					</div>
+					<p class="services-main-title">Парковка</p>
+					<p class="services-main-subtitle">бесплатно, круглосуточно</p>
+				</div>
+			</div>
+			<!-- end col -->
+
+			<div class="col-md-4">
+				<div class="text-center">
+					<div class="services-icon">
+						<i class="pe-7s-help2 service-icon-color"></i>
+					</div>
+					<p class="services-main-title">Бассейн</p>
+					<p class="services-main-subtitle">фильтрация, подсветка,
+						подогрев воды – 5&times;5 м</p>
+				</div>
+			</div>
+			<!-- end col -->
+
+			<div class="col-md-4">
+				<div class="text-center">
+					<div class="services-icon">
+						<i class="pe-7s-expand1 service-icon-color"></i>
+					</div>
+					<p class="services-main-title">Вместимость</p>
+					<p class="services-main-subtitle">до 20 человек</p>
+				</div>
+			</div>
+			<!-- end col -->
+		</div>
+		<!-- end row -->
+	</div>
+	<!-- end container -->
+</section>
+<!-- ADVANTAGES SECTION END -->
+
+<!-- FOR YOU SECTION START -->
+{% endblock content %}
+{% include "footer.html" %}
+</body>
+</html>
