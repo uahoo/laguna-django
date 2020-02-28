@@ -81,7 +81,7 @@ so I left it here commented -->
                         </p>
                     </div>
                 {% endif %}
-                <c:if test="${CHANGE eq 'logged'}">
+                {% if CHAGE == logged %}
                     <div class="contact-bar--text text-capitalize pull-right">
                         <p>
                             <a href="#" data-toggle="dropdown" data-target="#drop"><i
@@ -98,7 +98,7 @@ so I left it here commented -->
                         </ul>
                     </div>
 
-                </c:if>
+                {% endif %}
             </div>
         </div>
     </div>
