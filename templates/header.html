@@ -69,7 +69,7 @@ so I left it here commented -->
                 </div>
 
 
-                {% if CHANGE == null %}
+                {% if request.COOKIES.CHANGE == logged %}
                     <div class="contact-bar--text text-capitalize pull-right">
                         <p>
                             <a href="#" data-toggle="modal" data-target="#LoginModal"
@@ -80,8 +80,7 @@ so I left it here commented -->
                                 class="fa fm fa-user-plus"></i>зарегистрироваться</a>
                         </p>
                     </div>
-                {% endif %}
-                {% if CHAGE == logged %}
+                {% else  %}
                     <div class="contact-bar--text text-capitalize pull-right">
                         <p>
                             <a href="#" data-toggle="dropdown" data-target="#drop"><i
