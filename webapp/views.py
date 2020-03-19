@@ -30,10 +30,16 @@ class Registration(View):
         return render(request, 'header.html')
 
     def post(self, request: HttpRequest):
-        loging = request.POST['login']
+        username = request.POST['login']
         password = request.POST['password']
+        name = request.POST['name']
+        surname = request.POST['surname']
+        phone = str(request.POST['number'])
+        email = request.POST['email']
         try:
-            user = User.objects.create_user(username=loging, password=password)
+            user = User.objects.create_user(username=username, password=password, email=email, first_name=name,
+                                            last_name=surname)
+            user.save()
         except:
             return render(request, 'index.html')
         login(request, user)
@@ -45,21 +51,22 @@ class Registration(View):
 #         return render(request, 'header.html')
 #
 #     def post(self, request: HttpRequest):
-#         login = request.POST['login']
+#         username = request.POST['login']
 #         password = request.POST['password']
 #         name = request.POST['name']
 #         surname = request.POST['surname']
 #         phone = request.POST['number']
 #         email = request.POST['email']
 #         try:
-#             user = Users.objects.create(
-#                 username=login, password=password, name=name, surname=surname,
-#                 phone_number=phone, email=email)
-#             user.save()
+#             user = Users.objects.create_user(
+#                 username=username, password=password, first_name=name, last_name=surname,
+#                 phone=phone, email=email)
+#             # user.save(force_insert=True)
 #         except:
-#             return render(request, 'header.html')
+#             return redirect('/')
 #         login(request, user)
 #         return redirect('/')
+
 
 class ContactView(View):
     def get(self, request: HttpRequest):
@@ -87,7 +94,9 @@ class LoginView(View):
         if user is None:
             return render(request, 'index.html')
         login(request, user)
-        return redirect('/')
+        response = redirect('/')
+        response.set_cookie('CHANGE', 'logged')
+        return response
 
 
 class UserPageView(View):
