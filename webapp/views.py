@@ -13,15 +13,7 @@ from .models import *
 def index(request: HttpRequest):
     news = News.objects.all().order_by('id')[:2]
     tittle = 'Сауна люкс Лагуна: снять сауну в Минске'
-    user = {
-        "name": Users.name,
-        "surname": Users.surname,
-        "login": Users.login,
-        "password": Users.password,
-        "email": Users.email,
-        "phone": Users.phone_number
-    }
-    data = {'news': news, 'tittle': tittle, 'user': user}
+    data = {'news': news, 'tittle': tittle}
     return render(request, 'index.html', context=data)
 
 
@@ -94,11 +86,20 @@ class LoginView(View):
         if user is None:
             return render(request, 'index.html')
         login(request, user)
-        response = redirect('/')
+        data = {
+            'user': user
+        }
+        response = render(request, 'index.html', context=data)
         response.set_cookie('CHANGE', 'logged')
         return response
 
 
 class UserPageView(View):
-    def __get__(self, request: HttpRequest):
-        return render(request, 'user-page.html')
+    def get(self, request: HttpRequest):
+        user: User = request.user
+        if user.is_authenticated:
+            data = {
+                'user': user
+            }
+            return render(request, 'user-page.html', context=data)
+        return redirect('/')
